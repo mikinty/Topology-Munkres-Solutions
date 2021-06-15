@@ -14,11 +14,11 @@ There are also `TODO` comments if there are more minor parts that need work, e.g
 
 ## Progress
 
-- Chapter 1: :white_check_mark:
-- Chapter 2: :white_check_mark:
-- Chapter 3: :white_check_mark:
-- Chapter 4: :white_check_mark:
-- Chapter 5: :white_check_mark:
-- Chapter 6: :white_check_mark:
-- Chapter 7: :white_check_mark:
-- Chapter 8: :white_check_mark:
+- Chapter 1: :hourglass_flowing_sand:
+- Chapter 2: :x:
+- Chapter 3: :x:
+- Chapter 4: :x:
+- Chapter 5: :x:
+- Chapter 6: :x:
+- Chapter 7: :x:
+- Chapter 8: :x:
