@@ -1,0 +1,88 @@
+\section{Functions}
+
+\bx{
+  \ea{
+    \item Suppose $x \in A_0$. Then consider
+
+    \begin{equation*}
+      f^{-1}(f(A_0)) = \pbrac{x' \mid f(x') \in f(A_0)}.
+    \end{equation*}
+
+    Since $x \in A_0$, we know $f(x) \in f(A_0)$, and so we can conclude $x \in f^{-1}(f(A_0))$.
+
+    If $f$ is injective, then we know $f(x) = f(x'), x' \in A_0$ implies that $x = x' \implies x \in A_0$, proving equality.
+
+    \item Suppose $y \in f(f^{-1}(B_0)) = \pbrac{y' \mid \exists x \in f^{-1}(B_0), y' = f(x)}$.
+
+    We have $x \in \pbrac{x' \mid f(x') \in B_0}$, which means $y' = f(x) \in B_0$, so therefore $y \in B_0$.
+
+    If $f$ is surjective, then we know $y \in B_0 \implies \exists x \in A$ such that $f(x) = y$.
+
+    In particular, $f(x) = y \in B_0$, this set of $x \in f^{-1}(B_0)$, so we can conclude that $y \in f(f^{-1}(B_0))$.
+  }
+}
+
+\bx{
+  \ea{
+    \item We can write some definitions first
+    \begin{itemize}
+      \item $f^{-1}(B_0) = \pbrac{x \mid f(x) \in B_0}$
+      \item $f^{-1}(B_1) = \pbrac{x \mid f(x) \in B_1}$
+    \end{itemize}
+
+    If we know $B_0 \subset B_1$, then for some $x \in B_0$, we know $x \in B_1$.
+
+    This means for some $f(x) \in B_0, f(x) \in B_1$ as well, so therefore $f^{-1}(B_0) \subset f^{-1}(B_1)$.
+
+    \item
+    \begin{align*}
+      f^{-1}(B_0 \cup B_1) &= \pbrac{x \mid f(x) \in B_0 \cup B_1}\\
+      &= \pbrac{x \mid f(x) \in B_0 \text{ or } f(x) \in B_1}\\
+      &= \pbrac{x \mid f(x) \in B_0} \cup \pbrac{x \mid f(x) \in B_1}\\
+      &= f^{-1}(B_0) \cup f^{-1}(B_1)
+    \end{align*}
+
+    \label{item:inverse_or}
+
+    \item Basically the same proof as \ref{item:inverse_or}.
+    \item Basically the same proof as \ref{item:inverse_or}.
+    \item Suppose $x \in A_0$ means $x \in A_1$ as well.
+    Consider $y \in f(A_0) = \pbrac{y' \mid y' = f(x) \text{ for some } x \in A_0}$. Because of our assumptions, it is also the case that
+    $y \in \pbrac{y' \mid y' \text{ for some } x \in A_1} = f(A_1)$.
+
+    Notice that $f(A_0) \subset f(A_1)$ does not imply that $A_0 \subset A_1$. E.g. think parabola.
+
+    \item
+    \begin{align*}
+      f(A_0 \cup A_1)
+      &= \pbrac{y \mid y = f(x) \text{ for some } x \in A_0 \cup A_1} \\
+      &= \pbrac{y \mid y = f(x) \text{ for some } x \in A_0 \text{ or } x \in A_1} \\
+      &= \pbrac{y \mid y = f(x) \text{ for some } x \in A_0} \cup \pbrac{y \mid y \text{ for some } x \in A_1} \\
+      &= f(A_0) \cup f(A_1)
+    \end{align*}
+
+    \item
+    \begin{equation*}
+      f(A_0 \cap A_1) = \pbrac{y \mid y = f(x) \text{ for some } x \in A_0 \cap A_1}
+    \end{equation*}
+    which implies that $f(A_0 \cap A_1) \in f(A_0)$, since $x \in A_0$ and $f(A_0 \cap A_1) \in f(A_1)$, since $x \in A_1$.
+
+    This means that $f(A_0 \cap A_1) \subset f(A_0) \cap f(A_1)$.
+
+    Now, if $f$ is injective, then if we start with $y \in f(A_0) \cap f(A_1)$,
+    we know $y \in \pbrac{y' \mid y' = f(x), x \in A_0}$ and
+    $y \in \pbrac{y' \mid y' = f(x), x \in A_1}$. Since $f$ is injective, the
+    common $y'$ values in $f(A_0)$ and $f(A_1)$ will map to the same $x$ values
+    in $A_0$ and $A_1$, which means $y \in \pbrac{y' \mid y' = f(x), x \in A_0 \cap A_1} = f(A_0 \cap A_1)$.
+  }
+}
+
+\bx{
+  too lazy
+}
+
+\bx{
+  \ea{
+    \item
+  }
+}
