@@ -1,5 +1,148 @@
 \section{Fundamental Concepts}
 
 \bx{
+  We will check $\cup, \cap$ in DeMorgan's laws.
 
+  Let's use
+  \begin{itemize}
+    \item $A = \pbrac{1, 2, 3, 4}$
+    \item $B = \pbrac{-1, 2, 3, 5}$
+    \item $C = \pbrac{3, 9, 11}$
+  \end{itemize}
+
+  Check
+  \begin{align*}
+    A - (B \cup C) &= \pbrac{1, 2, 3, 4}  - \pbrac{-1, 2, 3, 5, 9, 11}\\
+    &= \pbrac{1, 4} \\
+    &= (A - B) \cap (A - C) \\
+    &= \pbrac{1, 4} \cap \pbrac{1, 2, 4} = \pbrac{1, 4}
+  \end{align*}
+
+  \begin{align*}
+    A - (B \cap C) &= \pbrac{1, 2, 3, 4}  - \pbrac{3}\\
+    &= \pbrac{1, 2, 4} \\
+    &= (A - B) \cup (A - C) \\
+    &= \pbrac{1, 4} \cup \pbrac{1, 2, 4} = \pbrac{1, 2, 4}
+  \end{align*}
+}
+
+\bx{
+  \ea{
+    \item $\implies$ is true. $\impliedby$ is not true, consider $A = \pbrac{1, 2, 3}, B = \pbrac{1, 3}, C = \pbrac{2}$.
+    \item $\implies$ is true. $\impliedby$ is not true, consider $A = \pbrac{1, 2, 3}, B = \pbrac{1, 3}, C = \pbrac{2}$.
+    \item True.
+    \item $\implies$ is not true. Consider $A = \pbrac{1} \subset B = \pbrac{1, 2}, C = \emptyset$. $\impliedby$ is true.
+    \item Not true. Consider $A = \pbrac{1}, B = \pbrac{2}$. I think $\subset$ works.
+    \item Not true. Consider $A = \pbrac{1, 2}, B = \pbrac{2, 3}$. LHS is equivalent to $A$, so this should be $\supset$.
+    \item True.
+    \item $\supset$
+    \item True.
+    \item True.
+    \item Not true, if $A = \emptyset$ for example, we have $(A \times B)
+    \subset (C \times D) = \emptyset \subset (C \times D)$, but we can set $B$
+    to whatever and this statement is still true, so we can make $B$ have an
+    element that is not in $D$, and therefore $B \not\subset D$.
+    \item True.
+    \item $\subset$
+    \item $\subset$
+    \item True.
+    \item I think this is true at first glance...at least $\subset$ looks good.
+    \item $\supset$
+  }
+}
+
+\bx{
+  \ea{
+    \item
+    \begin{itemize}
+      \item \textbf{Original}: If $x < 0$ then $x^2 - x > 0$. True.
+      \item \textbf{Contrapositive}: If $x^2 - x \leq 0$ then $x \geq 0$. True.
+      \item \textbf{Converse}: If $x^2 - x > 0$ then $x < 0$. False.
+    \end{itemize}
+
+    \begin{figure}[H]
+      \centering
+      \def\domainSize{3}
+      \begin{tikzpicture}
+        \begin{axis}[
+          axis y line = middle,
+          axis x line = middle,
+        ]
+
+        \addplot[
+          domain=-\domainSize:\domainSize,
+          samples=100
+        ]{
+          x^2 - x
+        };
+
+        \end{axis}
+      \end{tikzpicture}
+      \caption{Showing how to visualize where $x^2 - x > 0 $}
+      \label{chap1:fig:parabola}
+    \end{figure}
+
+    \item
+    \begin{itemize}
+      \item \textbf{Original}: If $x > 0$ then $x^2 - x > 0$. False.
+      \item \textbf{Contrapositive}: If $x^2 - x \leq 0$ then $x \leq 0$. False.
+      \item \textbf{Converse}: If $x^2 - x > 0$ then $x > 0$. False.
+    \end{itemize}
+  }
+}
+
+\bx{
+  \ea{
+    \item $\exists a \in A$ such that $a^2 \not\in B$
+    \item $\forall a \in A, a^2 \not\in B$
+    \item $\exists a \in A$ such that $a^2 \in B$.
+    \item $\exists a \not\in A$ such that $a^2 \not\in B$.
+  }
+}
+
+\bx{
+  \ea{
+    \item True. True.
+    \item False. True.
+    \item True. False.
+    \item True. True.
+  }
+}
+
+\bx{
+  \TODO too lazy
+}
+
+\bx{
+  \begin{align*}
+    D &= A \cap (B \cup C) \\
+    E &= (A \cap B) \cup C \\
+    F &= A
+  \end{align*}
+
+  For $F$, I was thinking $x \in B \implies x \in C$ means that either $x \in B$
+  and $x \in C$, or $x \not\in B$ and $x$ can be anything. This sounds like $x$
+  can be anything in the second case, so we have $A \cap \mathcal{U} = A$.
+}
+
+\bx{
+  $A = \pbrac{0, 1}$. $\mathcal{P}(A) = \pbrac{\emptyset, \pbrac{0}, \pbrac{1}, \pbrac{0, 1}}$.
+
+  If $A$ has one element, $\abs{\mathcal{P}(A)} = 2$. It is called the power set
+  because it contains all the subsets of $A$, and that $\abs{\mathcal{P}(A)} =
+  2^\abs{A}$.
+}
+
+\bx{
+  \TODO: You can honestly find this everywhere online. Standard proof.
+}
+
+\bx{
+  \ea{
+    \item $\mathbb{Z} \times \mathbb{R}$
+    \item $\mathbb{R} \times \left(0, 1\right]$
+    \item No. You can do a contradiction proof with cases that the first and second set are disjoint, and then that they are not disjoint.
+    \item Yes, $\pa{\mathbb{R} - \mathbb{Z}} \times \mathbb{Z}$
+    \item No. The cartesian product will produce a box, while this set is a circle.
+  }
 }
