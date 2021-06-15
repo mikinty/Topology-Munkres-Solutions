@@ -1,0 +1,57 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{forest}
+\usepackage{float}
+\usepackage{graphicx}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref} % allow for URL wrapping
+\usepackage{mathtools}
+\usepackage[standard]{ntheorem}
+\usepackage[super]{nth}
+\usepackage{pgfplots}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{subfig}
+\usepackage{soul}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{titling}
+\usepackage{verbatim}
+\usepackage{xspace}
+
+\title{Munkres Topology Solutions}
+\author{Michael You}
+\date{}
+
+% Custom math shortcuts
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sign}{sign}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\paren}{(}{)}
+\DeclarePairedDelimiter{\bracken}{[}{]}
+\DeclarePairedDelimiter{\bracen}{\{}{\}}
+\newcommand{\pa}[1]{\paren*{#1}}
+\newcommand{\pbra}[1]{\bracken*{#1}}
+\newcommand{\pbrac}[1]{\bracen*{#1}}
+
+% Exercise theorem env
+\theoremstyle{break}
+\theorembodyfont{\upshape} % No italics in body font
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{tip}{Tip}[section]
+\newtheorem{identity}{Identity}[section]
+
+% Environment Shortcuts
+\newcommand{\bx}[1]{\begin{exercise} #1 \end{exercise}}
+\newcommand{\ea}[1]{\begin{enumerate}[label=(\alph*)] #1 \end{enumerate}}
+
+% Shortcuts
+\newcommand{\AFSOC}{\text{AFSOC}\xspace}
+
+% Extras
+\newcommand{\TODO}{\hl{\textbf{TODO}}\xspace}
+
+% Pathing
+\newcommand{\subDir}[1]{chapters/chapter\currChapter/chapter\currChapter-#1}
