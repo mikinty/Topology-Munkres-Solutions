@@ -10,7 +10,7 @@
   An \textbf{equivalence relation} on a set $A$ is a relation $C$ on $A$ having the following 3 properties: (we use $\sim$ to denote the equivalence relation)
   \begin{enumerate}
     \item Reflexivity: $xCx \quad \forall x \in A$ ($x \sim x$)
-    \item Symmetry: If $xCy$ then $yCX$ ($x \sim y \implies y \sim x$)
+    \item Symmetry: If $xCy$ then $yCx$ ($x \sim y \implies y \sim x$)
     \item Transitivity: If $xCy$ and $yCz$ then $xCz$ ($x \sim y \land y \sim z \implies x \sim z$)
   \end{enumerate}
 \end{definition}
@@ -67,6 +67,321 @@
 \end{definition}
 
 \section*{Exercises}
+
+\bx{
+  Check equivalence relation:
+  \begin{itemize}
+    \item Reflexivity is obvious
+    \item Equality is symmetric, so the relation is too
+    \item Equality is transitive, so the relation is too
+  \end{itemize}
+
+  This looks like a bunch of parabolas of the form $y = x^2 + C$ on the plane, see figure \ref{chap1:sec3:p1:fig:1}
+
+  \begin{figure}[H]
+    \centering
+    \def\domainSize{2}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis y line = middle,
+        axis x line = middle,
+      ]
+
+      \addplot[
+        color=red,
+        ultra thick,
+        domain=-\domainSize:\domainSize,
+        samples=100
+      ]{
+        x^2
+      };
+
+      \addplot[
+        color=blue,
+        ultra thick,
+        domain=-\domainSize:\domainSize,
+        samples=100
+      ]{
+        x^2 + 0.25
+      };
+
+      \addplot[
+        color=green,
+        ultra thick,
+        domain=-\domainSize:\domainSize,
+        samples=100
+      ]{
+        x^2 + 0.5
+      };
+
+      \addplot[
+        color=black,
+        ultra thick,
+        domain=-\domainSize:\domainSize,
+        samples=100
+      ]{
+        x^2 + 0.75
+      };
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Plotting the partition defined by the equivalence relation}
+    \label{chap1:sec3:p1:fig:1}
+  \end{figure}
+}
+
+\bx{
+  Reflexivity will still hold in $A_0$, since $A_0 \in A$, and $C$ applies
+  to any element $x \in A$.
+  Symmetry still holds, since $x, y \in A$, and transitivity also holds since
+  $x, y, z \in A$. The idea is that $A_0$'s elements are contained in $A$, so
+  all the equivalence relation properies still hold.
+}
+
+\bx{
+  We are assuming $\exists b$ such that $aCb$. If there is no such $b$, then we do not have $aCa$.
+}
+\bx{
+  \item \ea{
+    \item Let us check the properties
+    \begin{itemize}
+      \item Reflexive: $f(a) = f(a)$ is trivial
+      \item Symmetric: If we have $f(a) = f(b)$, then $f(b) = f(a)$
+      \item Transitive: Equality is transitive, so this also holds
+    \end{itemize}
+
+    \item $A^\ast$ is a partition of $B$, so a bijective correspondence exists.
+  }
+}
+
+\bx{
+  \ea{
+    \item $S'$ is an equivalence relation because we can imagine partitions of
+    $y - x = z$ for $z \in \mathbb{Z}$.
+    In $S$, we notice that $y - x = 1$, and $1 \in \mathbb{Z}$, so we know every
+    relation in $S$ is also in $S'$, therefore $S \subset S'$.
+    See \ref{chap1:sec3:p5:fig:1} for how to visualize these equivalence
+    classes.
+    \begin{figure}[H]
+      \centering
+      \def\domainSize{2}
+      \begin{tikzpicture}
+        \begin{axis}[
+          axis y line = middle,
+          axis x line = middle,
+        ]
+
+        \addplot[
+          color=green,
+          ultra thick,
+          domain=-\domainSize:\domainSize,
+          samples=100
+        ]{
+          x - 0.2
+        };
+
+        \addplot[
+          color=blue,
+          ultra thick,
+          domain=-\domainSize:\domainSize,
+          samples=100
+        ]{
+          x - 0.1
+        };
+
+        \addplot[
+          color=red,
+          ultra thick,
+          domain=-\domainSize:\domainSize,
+          samples=100
+        ]{
+          x
+        };
+
+        \addplot[
+          color=blue,
+          ultra thick,
+          domain=-\domainSize:\domainSize,
+          samples=100
+        ]{
+          x + 0.1
+        };
+
+        \addplot[
+          color=green,
+          ultra thick,
+          domain=-\domainSize:\domainSize,
+          samples=100
+        ]{
+          x + 0.2
+        };
+
+        \addplot[
+          color=black,
+          ultra thick,
+          domain=-\domainSize:\domainSize,
+          samples=100
+        ]{
+          x + 0.3
+        };
+
+        \end{axis}
+      \end{tikzpicture}
+      \caption{Plotting the partition defined by the equivalence relation}
+      \label{chap1:sec3:p5:fig:1}
+    \end{figure}
+
+    \item If their intersection is empty, then this is trivially true.
+
+    Otherwise, if we have some nonempty intersection, since we know any elements
+    in this intersection are also part of some equivalence relation, all the
+    equivalence relation properties apply, so this intersection is also an
+    equivalence relation on $A$.
+
+    \item \TODO: I'm pretty confused about this question. Wouldn't the intersection of all equivalence relations that contain $S$ just end up with $S$?
+  }
+}
+
+\bx{
+  Showing it is an order relation
+  \begin{itemize}
+    \item Comparability: Per the rule, we will always have $xCy$ or $yCx$.
+    \item Nonreflexitivity: We have a tiebreaker rule that prevents $xCx$.
+    \item Transitivity: Intuitively, there is an ordering at the highest level
+    with $y-x^2$ value. If there are ties there, we check with $x$ values for
+    ordering.
+  \end{itemize}
+
+  Yeah sorry I didn't feel like doing the order relation formally, but hopefully
+  the geometric solution can help explain more. There's just a lot of casework
+  and mundane proof so I didn't feel like writing it out.
+
+  Geometrically, this is like the partition in \ref{chap1:sec3:p1:fig:1}, except
+  parabolas that are higher up are ordered ``higher''. Within a parabola, the
+  values on the left are less than the values on the right.
+}
+
+\bx{
+  A restriction is a subset of the larger set, so all the order relation properties will still hold.
+}
+
+\bx{
+  I assume the author wants us to check the $x^2 < y^2$, if $x^2 = y^2$, then $x < y$.
+
+  \begin{enumerate}
+    \item Comparability: If $x^2 \neq y^2$, either $x^2 < y^2$ or $x^2 > y^2$.
+    If $x^2 = y^2$, then it must be the case that $x, y \neq 0$, and one of $x,
+    y$ is negative and the other positive, so we either have $x > y$ or $x < y$.
+
+    \item Nonreflexitivity: $xCx$ means $x^2 = x^2$, so we would check $x < \text{ or } > x$, but this is not possible since $x = x$.
+    \item Transitivity: If $xCy$ then $x^2 < y^2$ or $x < y$, and if we have
+    $yCz$ then $y^2 < z^2$ or $y < z$. In all cases, we can conclude $x^2 < z^2$
+    or $x < z$. I'm being lazy with casework here.
+  \end{enumerate}
+}
+
+\bx{
+  We want to check that a dictionary order relation is an order relation.
+
+  \begin{enumerate}
+    \item Comparability: For any two $(a_1, b_1), (a_2, b_2)$, we have 2 cases:
+      \begin{enumerate}
+        \item $a_1 <_A a_2$ or $a_2 <_A a_1$ since $<_A$ is an order relation on $A$.
+        Then we know $(a_1, b_1) < (a_2, b_2)$ or $(a_1, b_1) > (a_2, b_2)$.
+        \item $a_1 = a_2$. Then we use the same argument with $b_1, b_2$, that
+        either $b_1 <_B b_2$ or $b_2 <_B b_1$, which then shows the
+        corresponding $<$ and $>$ on the tuple.
+      \end{enumerate}
+
+    \item Nonreflexitivity: if we have some $(a, b)$, we know by $<_A$ that $a
+    <_A a$ does not hold, so the overall order relation is not possible.
+
+    \item Transitivity: If we have $(a_1, b_1) < (a_2, b_2) < (a_3, b_3)$, then we have 2 cases for the first tuple, and 2 cases for the second tuple.
+    \begin{enumerate}
+      \item $a_1 <_A a_2 <_A a_3$: then we can use the transitive property of $<_A$
+      \item $a_1 <_A a_2 = a_3$: we can see that $a_1 <_A a_3$
+      \item $a_1 = a_2 <_A a_3$:  we can see that $a_1 <_A a_3$
+      \item $a_1 = a_2 = a_3$: then we must have $b_1 <_B b_2 <_B b_3$, so we can use the transitive property of $<_B$
+    \end{enumerate}
+  \end{enumerate}
+}
+
+\bx{
+  \begin{itemize}
+    \item One way to see that this is an order preserving function is that the derivative is always positive between $(-1, 1)$,
+    \begin{equation*}
+      f'(x) = \frac{
+        x^2 + 1
+      }{
+        \pa{1-x^2}^2
+      },
+    \end{equation*}
+    which means the function is monotonically increasing, and thus will preserve the order, since monotonically increasing functions have the property that
+    \begin{equation*}
+      a < b \implies f(a) < f(b).
+    \end{equation*}
+
+    \item This is just an algebra exercise...pretty easy to verify
+  \end{itemize}
+}
+
+\bx{
+  \AFSOC there is more than one immediate successor to some $a$, call them $b$ and $c$. Then by order set properties, we know that either $b < c$ or $c < b$.
+  In either case, we end up finding that $b$ or $c$ cannot be immediate successors, since for example, if $b < c$, we have that $(a, c)$ is not empty.
+
+  The argument for immediate predecessor is symmetric to this argument.
+
+  To show there can only be one smallest element, we can \AFSOC there is more
+  than one. If we call these $a, a'$, we know from ordering properties that WLOG
+  $a < a'$, then $a'$ is not the smallest element, so this is a contradiction.
+
+  The argument for the largest element is symmetric.
+}
+
+\bx{
+  \begin{enumerate}[label=(\roman**)]
+    \item Every element has an immediate predecessor. For some $(x, y)$, the
+    immediate predecessor is $(x, y+1)$.
+    There is no smallest element, since you can always find a smaller element,
+    i.e. for any $(x, y)$, $(x-1, y) < (x, y)$.
+
+    \item The immediate predecessor for some $(x, y)$ is $(x+1, y+1)$. There is
+    no smallest element, since you can always find $(x-1, y) < (x, y)$ for any
+    $(x, y)$.
+
+    \item The immediate predecessor for some $(x, y)$ is $(x-1, y+1)$. There is
+    no smallest element, since for any $(x, y)$, you have $(x-1, y) < (x, y)$.
+  \end{enumerate}
+
+  Not rigorous, but geometrically, the first ordering is like a zigzag on the
+  plane, the second one is like $y = x + C$, and the third is $y = -x + C$, so
+  these orderings are all different.
+}
+
+\bx{
+
+}
+
+\bx{
+  \ea{
+    \item If $C$ is symmetric, then $(a, b) \in C \implies (b, a) \in C$, which means $D \subset C$.
+
+    If $C = D$, then $(a, b) \in C \implies (b, a) \in D = C$, so therefore $C$ is symmetric.
+
+    \item We will check the order relation properties for $D$
+    \begin{enumerate}
+      \item Comparability: For any $(b, a) \in D$, we know $(a, b) \in C$, so we
+      know either $b < a$ or $a < b$.
+      \item Nonreflexitivity: $(b, b) \in D$ would imply $(b, b) \in C$, but $C$
+      is an order relation so this is not possible.
+      \item Transitivity: $(c, b) \in D, (b, a) \in D$. We know that $(a, b),
+      (b, c) \in C$, so we know $(a, c) \in C$, so therefore $(c, a) \in D$,
+      which proves transitivity.
+    \end{enumerate}
+
+    \item
+  }
+}
 
 \bx{
 
