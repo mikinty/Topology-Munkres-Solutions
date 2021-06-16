@@ -83,6 +83,212 @@
 
 \bx{
   \ea{
-    \item
+    \item Consider
+    \begin{align*}
+      (g \circ f)^{-1}(C_0)
+      &= \pbrac{a \mid (g \circ f)(x) \in C_0} \tag{by definition}\\
+      &= \pbrac{a \mid \text{for some } b \in B, f(a) = b, g(b) = c \in C_0} \\
+      &= \pbrac{a \mid \text{for some } b \in B, f(a) = b, b \in g^{-1}(C_0)} \tag{we know $b \in g^{-1}(C_0)$ since $C_0 \subset C$}\\
+      &= \pbrac{a \mid f(a) \in g^{-1}(C_0)}\\
+      &= f^{-1}\pa{g^{-1}\pa{C_0}}
+    \end{align*}
+
+    Just a note for this problem, it's easy to get caught up with definitions
+    and forget why we need assumptions. It might seem easy to do this problem
+    without the fact that $C_0 \subset C$, but if you look at the step where we
+    use that property, if $C_0 \not\subset C$, we cannot assume that $b \in
+    g^{-1}(C_0)$, e.g. if $C_0$ contains elements that are not in $C$.
+
+    \item Suppose we have
+    \begin{align*}
+      (g \circ f)(a) &= (g \circ f)(a')\\
+      g(f(a)) &= g(f(a'))\tag{by def.}\\
+      f(a) &= f(a')\tag{because $g$ is injective}\\
+      a &= a'\tag{because $f$ is injective}
+    \end{align*}
+    therefore we conclude that $g \circ f$ is also injective.
+
+    \item If we know that $g \circ f$ is injective,
+    \begin{itemize}
+      \item \AFSOC $f$ is not injective. Then $\exists a_1, a_2$ such that
+      $f(a_1) = f(a_2)$ but $a_1 \neq a_2$. If this is the case, then $(g \circ
+      f)(a_1) = g(f(a_1)) = g(f(a_2)) = (g \circ f)(a_2)$ which shows that $g
+      \circ f$ is not injective. Which is a contradiction. Therefore, $f$ must
+      be injective.
+
+      \item It is possible for $g$ to not be injective. We can have some $b \in
+      B$ that $\not\exists a \in A$ such that $f(a) = b$. In this case, we will
+      not be able to find some input $a \neq a' \in $ where we break injectivity
+      for $g \circ f$.
+    \end{itemize}
+
+    \item Suppose $f$ and $g$ are surjective. Now consider some $c \in C$.
+    Since $g$ is surjective, we know $\exists b \in B$ such that $g(b) = c$.
+    For this $b \in B$, since $f$ is surjective, we know that $\exists a \in A$
+    such that $f(a) = b$.
+    This means for any $c \in C$, we know $\exists a$ such that $g(f(a)) = (g
+    \circ f)(a) = c$, which means $g \circ f$ is surjective.
+
+    \item If we know that $g \circ f$ is surjective,
+    \begin{itemize}
+      \item It is possible for $f$ to not be surjective. Intuitively, a
+      counterexample would show that there is some $b \in B$ such that
+      $\not\exists a \in A$ such that $f(a) = b$. But all we have to make sure
+      in our example is that whatever $g(b) = c$ maps to, $\exists a' \neq a \in
+      A$ such that $(g \circ f)(a') = c$.
+
+      \item \AFSOC $g$ is not surjective. Then $\exists c \in C$ such that
+      $\not\exists b \in B$ such that $g(b) = c$. If this is the case, then
+      $\not\exists a \in A$ such that $(g \circ f)(a) = c$, which means $g \circ
+      f$ is not surjective. This is a contradiction, therefore $g$ must be
+      surjective.
+    \end{itemize}
+
+    \item Summary should be pretty clear :) from the results above.
   }
+}
+
+\bx{
+  \item Alright let's consider the two cases in this problem
+  \begin{itemize}
+    \item $f$ has a left inverse, i.e. $\exists g, g \circ f = i_A$.
+
+    \AFSOC $f$ is not injective. This means that $f(a) = f(a') = b \in B$ but $a \neq a' \in A$.
+
+    If this is the case, then $g(b) = a$ or $g(b) = a'$, but cannot be both, by the definition of a function, which means that $g \circ f$ is not $i_A$ by counterexample of either $a$ or $a'$.
+
+    \item $f$ has a right inverse, i.e. $\exists h, f \circ h = i_B$.
+
+    \AFSOC $f$ is not surjective. Then $\exists b \in B$ such that $\not\exists a \in A$ such that $f(a) = b$. If this is the case, then for this $b$, $(f \circ h)(b) \neq b$, in which case $f \circ h \neq i_B$.
+  \end{itemize}
+
+  \label{chap1:p5:part:a}
+
+  \item The proofs above in \ref{chap1:p5:part:a} are by contradiction, and illustrate how to construct such a counterexample.
+  \item The proofs above in \ref{chap1:p5:part:a} are by contradiction, and illustrate how to construct such a counterexample.
+  \item No, these left/right inverses are unique. Not rigorous, but if you have an identity mapping and you change any of the mappings, it will no longer be an identity mapping.
+  \item So we have $f$ that has both a left and right inverse, $g, h$
+  respectively.In that case, we know that $f$ is injective and surjective, by
+  the results of \ref{chap1:p5:part:a}, so we can conclude that $f$ is
+  bijective. We have $g = h = f^{-1}$ by Lemma 2.1 in the text.
+
+  (We could've just used Lemma 2.1 directly, but I think it's important to
+  remind ourselves that showing a function is injective and surjective is a
+  problem solving technique for showing a function is bijective.)
+}
+
+\bx{
+  Let us draw out our function first,
+
+  \begin{figure}[H]
+    \centering
+    \def\domainSize{2}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis y line = middle,
+        axis x line = middle,
+      ]
+
+      \addplot[
+        domain=-\domainSize:\domainSize,
+        samples=100
+      ]{
+        x^3 - x
+      };
+
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Plotting $f(x) = x^3 - x$}
+    \label{chap1:sec2:p6:fig:1}
+  \end{figure}
+
+  A less formal way to imagine injective functions is to use the horizontal line
+  test. If you sweep a horizontal line and it intersects the plot in more than 1
+  spot, then you know the function is not injective. We see our function $f(x)$
+  here has issues between $[-1, 1]$.
+
+  For surjectivity, we just need to map all of $\mathbb{R}$ on the $y$-axis. Our
+  function does this nicely already, so we just have to make our function
+  injective, and then make sure to keep the surjectivity.
+
+  We have two choices here, we can either restrict our domain to be
+  \begin{itemize}
+    \item $D = (-\infty, -1) \cup [-1, \infty)$
+    \item $D = (-\infty, -1] \cup (-1, \infty)$
+  \end{itemize}
+
+  If we use the first choice, we will get the following plot as $g$:
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis y line = middle,
+        axis x line = middle,
+      ]
+
+      \addplot[
+        domain=-2:-1,
+        samples=100
+      ]{
+        x^3 - x
+      };
+
+      \addplot[
+        domain=1:2,
+        samples=100
+      ]{
+        x^3 - x
+      };
+
+      \addplot[only marks, mark=o] table[row sep=crcr] {
+        x y\\
+        -1 0\\
+      };
+
+      \addplot[only marks] table[row sep=crcr] {
+        x 0\\
+        1 0\\
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Plotting $g(x)$, a bijective function. Open circles are exclusive, closed circles are inclusive.}
+    \label{chap1:sec2:p6:fig:2}
+  \end{figure}
+
+  To find $g^{-1}$, a classic algebra way to do this is to solve the function in
+  terms of $x$. Because of the horizontal line issues from before, we will
+  encounter, some issues, but because of our domain restriction, things should
+  be ok.
+
+  Instead of solving for $x$, since we already have a plot, we can just do a
+  reflection across $y=x$, and we will get the inverse function $g^{-1}$. The
+  intuitive way to think about this is that we are essentially swapping all $(x,
+  y)$ coordinates to become $(y, x)$.
+
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis y line = middle,
+        axis x line = middle,
+      ]
+
+      \addplot[domain=-2:-1] (x^3 - x, x);
+
+      \addplot[domain=1:2] (x^3 - x, x);
+
+      \addplot[only marks, mark=o] table[row sep=crcr] {
+        x y\\
+        0 -1\\
+      };
+
+      \addplot[only marks] table[row sep=crcr] {
+        x y\\
+        0 1\\
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Plotting $g(x)$, a bijective function. Open circles are exclusive, closed circles are inclusive.}
+    \label{chap1:sec2:p6:fig:3}
+  \end{figure}
 }
