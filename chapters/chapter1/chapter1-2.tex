@@ -1,5 +1,62 @@
 \section{Functions}
 
+\begin{definition}
+  We define the \textbf{composite} $g \circ f$ of $f : A \to B$ and $g : B \to C$ as the function $g \circ f : A \to C$ defined by the equation
+  \begin{equation}
+    (g \circ f)(a) = g(f(a))
+  \end{equation}
+
+  and
+
+  \begin{equation}
+    \pbrac{(a, c) \mid \text{for some } b \in B, f(a) = b \text{ and } g(b) = c}
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  A function $f$ is \textbf{injective} if
+  \begin{equation}
+    \pbra{
+      f(a) = f(a')
+    } \implies \pbra{
+      a = a'
+    }
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  A function $f$ is \textbf{surjective} if
+  \begin{equation}
+    \pbra{b \in B} \implies \pbra{
+      \exists a \in A, b = f(a)
+    }
+  \end{equation}
+\end{definition}
+
+\begin{lemma}
+  Let $f : A \to B$. If there are functions $g : B \to A$ and $h : B \to A$ such
+  that $g(f(a) = a, \forall a \in A$ and $f(h(b)) = b, \forall b \in B$, then
+  $f$ is bijective and $g = h = f^{-1}$.
+\end{lemma}
+
+\begin{definition}
+  $f(A_0)$ is the \textbf{image} of $A_0$, and
+  \begin{equation}
+    f(A_0) = \pbrac{
+      b \mid \exists a \in A_0, b = f(a)
+    }
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  $f^{-1}(B_0)$ is the preimage of $B_0$ under $f$, formally
+  \begin{equation}
+    f^{-1}(B_0) = \pbrac{
+      a \mid f(a) \in B_0
+    }
+  \end{equation}
+\end{definition}
+
 \bx{
   \ea{
     \item Suppose $x \in A_0$. Then consider
