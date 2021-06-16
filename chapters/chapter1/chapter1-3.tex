@@ -1,0 +1,73 @@
+\section{Relations}
+
+\begin{definition}
+  A \textbf{relation} on a set $A$ is a subset $C$ of the cartesian product $A \times A$.
+
+  For a relation $C$ on $A$, we use the notation $xCy$ to mean $(x, y) \in C$, or ``$x$ is in the relation $C$ to $y$.''
+\end{definition}
+
+\begin{definition}
+  An \textbf{equivalence relation} on a set $A$ is a relation $C$ on $A$ having the following 3 properties: (we use $\sim$ to denote the equivalence relation)
+  \begin{enumerate}
+    \item Reflexivity: $xCx \quad \forall x \in A$ ($x \sim x$)
+    \item Symmetry: If $xCy$ then $yCX$ ($x \sim y \implies y \sim x$)
+    \item Transitivity: If $xCy$ and $yCz$ then $xCz$ ($x \sim y \land y \sim z \implies x \sim z$)
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  We call a subset of $E$ of $A$ the \textbf{equivalence class} determined by $x$ as the equation
+  \begin{equation}
+    E = \pbrac{
+      y \mid y \sim x
+    }
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  A \textbf{partition} of a set $A$ is a collection of disjoint nonempty subsets of $A$ whose union is all of $A$.
+\end{definition}
+
+\begin{definition}
+  A relation $C$ on a set $A$ is called an \textbf{order relation} if it has the following properties:
+  \begin{enumerate}
+    \item Comparability: For every $x, y \in A$ for which $x \neq y$, either $xCy$ or $yCx$
+    \item Nonreflexitivity: For no $x \in A$ does $xCx$ hold
+    \item Transtivity: If $xCy$ and $yCz$ then $xCz$
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  if $X$ is a set and $<$ is an order relation on $X$, and if $a<b$, we use the notation $(a, b)$ to denote the set
+  \begin{equation}
+    \pbrac{
+      x \mid a < x < b
+    };
+  \end{equation}
+  it is called an \textbf{open interval} in $X$. If this set if empty, we call
+  \begin{itemize}
+    \item $a$ the \textbf{immediate predecessor} of $b$
+    \item $b$ the \textbf{immediate successor} of $a$
+  \end{itemize}
+\end{definition}
+
+\begin{definition}
+  Suppose $A, B$ are two sets with order relations $<_A$ and $<_B$ respectively. We say that $A, B$ have the same \textbf{order type} if there is a bijective correspondence between them that preserves order; that is, if there exists a bijective function $f : A \to B$ such that
+  \begin{equation}
+    a_1 <_A a_2 \implies f(a_1) <_B f(a_2)
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  An ordered set $A$ has the \textbf{least upper bound property} if every
+  nonempty subset $A_0$ of $A$ that is bounded above has a least upper bound.
+  Analogously, the set $A$ is said to have the \textbf{greatest lower bound
+  property} if every nonempty subset $A_0$ of $A$ that is bounded below has a
+  greatest lower bound.
+\end{definition}
+
+\section*{Exercises}
+
+\bx{
+
+}
