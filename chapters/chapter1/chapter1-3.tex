@@ -359,7 +359,22 @@
 }
 
 \bx{
-
+  Suppose $A$ has the least upper bound property, meaning every nonempty subset
+  $A_0$ of $A$ is bounded above by some least upper bound.
+  \AFSOC $A$ does not have the greatest lower bound property, that is $\exists
+  A_1 \subset A$ such that $A_1$ does not have a greatest lower bound.
+  If this is the case, then consider the lower bound $a$ for this set $A_1$, and
+  consider the set $A_2$, which we define as
+  \begin{equation*}
+    A_2 = \pbrac{a' \mid a' \geq a}
+  \end{equation*}
+  Notice that $A_2$ cannot be empty, or else $a$ is the only, and therefore greatest lower bound for $A_1$.
+  Now, from the definition of $A_2$, we can see that $a$ is an upper bound for
+  $A_2$. However, we now claim that there is no least upper bound for $A_2$.
+  Because if there were, call it some $a_2$, then $a_2$ would be the greatest
+  lower bound for $A_1$, since $a_2$ is larger than all lower bounds of $A_1$.
+  This is a contradiction, since we assumed that $A_1$ does not have a greatest lower bond.
+  Therefore, we must conclude that every subset of $A$ has a greatest lower bound.
 }
 
 \bx{
@@ -379,10 +394,34 @@
       which proves transitivity.
     \end{enumerate}
 
-    \item
+    \item The other direction of the argument is symmetric.
   }
 }
 
 \bx{
+  \ea{
+    \item Let us show that
+    \begin{itemize}
+      \item 1 is the least upper bound for $[0, 1]$. We can see this because if
+      you pick any smaller of an upper bound $u$, $u < 1$ and thus is not an
+      upper bound for the set.
 
+      \item 1 is the least upper bound for $[0, 1)$. Suppose we have some other
+      least upper bound $u$ such that $x \in [0, 1), x \leq u$, but $u < 1$.
+      Then consider $u' = u + \epsilon/2$, where $\epsilon = \frac{1-u}{2}$.
+      Then $u'$ is $<1$ but $u' > u$ and is also an upper bound, which means $u$
+      was not the least upper bound. Therefore we have reached a contradiction
+      and conclude that 1 is the least upper bound.
+    \end{itemize}
+
+    \item $[0, 1] \times [0, 1]$ with dictionary ordering has least upper bound property.
+    This is because for any subset, if we look at the first coordinate, it is in
+    $[0, 1]$, which we showed has the least upper bound property, so call this
+    upper bound $u_1$.
+    Similarly, for the second coordinate it is also in $[0, 1]$, so we have a
+    least upper bound $u_2$ for this coordinate.
+    Then we have $(u_1, u_2)$ is a least upper bound for any subset in $[0, 1] \times [0, 1]$.
+
+    This argument holds for $[0, 1] \times [0, 1)$ and $[0, 1) \times [0, 1]$.
+  }
 }
