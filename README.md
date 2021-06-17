@@ -7,6 +7,8 @@ The PDF is located in the [`build/`](./build/main.pdf) folder of the repo.
 
 If you want to contribute, feel free to fork and submit a PR!
 
+Lastly, if you found this guide helpful, consider [buying me a coffee](https://www.buymeacoffee.com/mikinty)!
+
 ## TODOs
 
 I use `\TODO` to mark the problems that need work or don't have solutions.
