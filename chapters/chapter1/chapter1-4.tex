@@ -1,0 +1,211 @@
+\section{The Integers and the Real Numbers}
+
+\begin{enumerate}
+  \item
+  \begin{align*}
+  (x+y) + z &= x + (y + z)\\
+  (x\cdot y) \cdot z &= x \cdot (y \cdot z)
+  \end{align*}
+
+  \item \begin{align*}
+    x + y &= y + x\\
+    x \cdot y &= y \cdot x
+  \end{align*}
+
+  \item $\exists$ element of $\mathbb{R}$ called \textbf{zero}, denoted by $0$, such that
+  \begin{equation*}
+    x + 0 = x, \forall x \in \mathbb{R}
+  \end{equation*}
+
+  \item $\exists$ element of $\mathbb{R}$ called \textbf{one}, denoted by $1$, such that
+  \begin{equation*}
+    x \cdot 1 = x, \forall x \in \mathbb{R}
+  \end{equation*}
+
+  \item \begin{equation*}
+    x \cdot (y + z) = (x \cdot y) + (x \cdot z)
+  \end{equation*}
+
+  \item \begin{align*}
+    &\text{If } x>y, \text{ then } x + z > y + z\\
+    &\text{If } x>y \text{ and } z > 0, \text{ then } x \cdot z > y \cdot z
+  \end{align*}
+\end{enumerate}
+
+\begin{itemize}
+  \item Properties 1-5 define a field
+  \item Properties 1-6 define an ordered field
+  \item Properties 7-8 by themselves define a linear continuum
+\end{itemize}
+
+\begin{definition}
+  A \textbf{section} $S_n$ is defined as
+  \begin{equation}
+    S_{n+1} = \pbrac{
+      1, 2, \dots, n
+    }
+  \end{equation}
+\end{definition}
+
+\section*{Exercises}
+
+\bx{
+  \TODO: Too lazy
+}
+
+\bx{
+  \TODO: too lazy
+}
+
+\bx{
+  \ea{
+    \item If we take the intersection of any two inductive sets, call this
+    intersection $A$, we know that $1 \in A$, and we still can inductively show
+    that for any $x \in A$, that $x + 1 \in A$ as well, since $x$ is part of two
+    inductive sets.
+    We can then use induction to prove that the intersection of an arbitrary
+    collection of inductive sets is also inductive.
+
+    \item Proving the basic properties \begin{enumerate}[label=(\arabic*)]
+      \item $1 > 0$ and $1 \in \mathbb{Z}$, so $1 \in \mathbb{Z}_+$. Now for any
+      $x \in \mathbb{Z}_+$, the number $x+1$ is still an integer, and since $x >
+      0$, we know $x + 1 > 0$, which means $x + 1 \in \mathbb{Z}_+$ as well.
+      Therefore, we conclude $\mathbb{Z}_+$ is inductive.
+
+      \item \AFSOC $A \neq \mathbb{Z}_+$. Then we know that $\exists x \in
+      \mathbb{Z}_+, x \not\in A$. However, if we use induction from 1, we can
+      show that $x \in A$, which is a contradiction. Therefore we conclude $A =
+      \mathbb{Z}_+$.
+    \end{enumerate}
+  }
+}
+
+\bx{
+  \ea{
+    \item We have $a \in \mathbb{Z}_+$. We just want to inductively show that $a + x \in \mathbb{Z}_+, \forall x \in \mathbb{Z}_+$.
+    We can do this by induction.
+    \label{chap1:sec4:prob5:parta}
+    \item Induction on $b$ \label{chap1:sec4:prob5:partb}
+    \item We can either casework here, with $a = 0, a \geq 1$, or we can show that $a-1$ is inductive.
+    \label{chap1:sec4:prob5:partc}
+    \item We can use induction on $d$, via \ref{chap1:sec4:prob5:partc}
+    \item We can use induction on $d$, both ways (positive and negative directions)
+  }
+}
+
+\bx{
+  \begin{enumerate}
+    \item $a^na^m = a^{n+m}$, shown by \ref{chap1:sec4:prob5:parta}
+    \label{chap1:sec4:prob6:parta}
+    \item $(a^n)^m = a^{nm}$, shown by \ref{chap1:sec4:prob5:partb}
+    \item $a^mb^m = (ab)^{m}$, induction on $m$, and you have to use the
+    property in \ref{chap1:sec4:prob6:parta} for $(ab)^m \cdot ab = (ab)^{m+1}$.
+  \end{enumerate}
+}
+
+\bx{
+  \TODO: probably just doing induction in another direction
+}
+
+\bx{
+  \ea{
+    \item This is a corollary of the Axiom of Completness, which states that every nonempty set of real numbers that is bounded above has a least upper bound.
+    \item Informally, suppose we have some $\epsilon > 0$ that is the $\inf$ of this set, then we can always find $1/n < \epsilon$, so therefore this $\epsilon$ is not the $\inf$, and we conclude that $0$ is the $\inf$.
+    \item \TODO: induction proof, idea is that $a^n$ gets smaller as $n$ increases, and can be smaller than any $\epsilon$. We have to show this property by induction.
+  }
+}
+
+\bx{
+  \ea{
+    \item Follows from that $\mathbb{Z} \subset \mathbb{R}$.
+    \item \AFSOC there are two such numbers, $n_1, n_2 \in \mathbb{Z}$. WLOG $n_1 > n_2$, Then we can find that
+    \begin{align*}
+      n_1 &< x < n_1 + 1\\
+      n_2 < x < n_2 + 1 \implies
+      -n_2 - 1 &< -x < -n_2\\
+      \implies n_1 - n_2 - 1 &< 0 < n_1 - n_2 + 1
+    \end{align*}
+    which is impossible, since $n_1 - n_2 - 1 \geq 0$, which is $\not< 0$, so
+    therefore we cannot have more than one $n$.
+
+    Now to show the existence of this $n$, we can use a contradiction argument
+    along with an induction argument to show no such $n$ exists would imply $x
+    \not\in \mathbb{R}$.
+
+    I'm sure there's a more straightforward proof with lower bounds...using the
+    fact that $\mathbb{Z}$ has a greatest lower bound.
+
+    \item We have $n \geq x > y + 1 > y \geq m$ for $m, n \in \mathbb{Z}$.
+
+    Either $y+1$ is an integer, in which case $n = y+1$. If $y+1$ is not an
+    integer, then we know it is bounded below by some $b \in \mathbb{Z}$ such that $b < y + 1 < b + 1$,
+    which we know must be $<x$, and $>y$, since if it were $\leq y$, then we could choose
+    $b' = b + 1$, and $b' > y$ and $b' \leq y+1$, and thus $b$ would not satisfy $b + 1 > y+1$.
+    In this case, $n = b$, and we have $x > n > y, n \in \mathbb{Z}$.
+
+    \label{chap1:sec4:prob9:partc}
+
+    \item We know that $x - y > 0$, so we can find some $n \in \mathbb{Z}$ such that $n(x - y) > 1$.
+    Using \ref{chap1:sec4:prob9:partc}, we can find some $m \in \mathbb{Z}$ such that
+    \begin{align*}
+      nx &> m > ny\\
+      x &> \frac{m}{n} > y
+    \end{align*}
+
+    let $z = m/n$.
+  }
+}
+
+\bx{
+    \ea{
+      \item First, let's show
+      \begin{align*}
+        (x+h)^2 = x^2 + 2xh + h^2 &\leq x^2 + h(2x + 1)\\
+        \implies h^2 &\leq h\\
+        \implies h &\leq 1\tag{Given, since $h<1$}
+      \end{align*}
+
+      Notice in the last step, if $h = 0$, then we don't divide and $0^2 \leq 0$ holds.
+
+      \begin{align*}
+        (x-h)^2 = x^2 - 2xh + h^2 &\geq x^2 - 2xh\\
+        \implies h^2 &\geq 0\\
+        \implies h &\geq 0\tag{Given, since $h\geq 0$}
+      \end{align*}
+
+      Notice in the last step, if $h = 0$, then we don't divide and $0^2 \geq 0$ holds.
+
+      \item If we have $x^2 < a$, then we know $(x+h)^2 \leq x^2 + h(2x + 1)$, so we can find an $h$ by considering the RHS and making it $< a$.
+      We can do this by solving for $h$, which gives us
+      \begin{equation*}
+        h < \frac{a - x^2}{2x+1}
+      \end{equation*}
+
+      The other part of the problem is more of the same algebra.
+
+      \item $B$ is bounded above by $1 + a$, and $a/2 \in B$.
+      If we let $b = \sup B$, then $b^2$ cannot be $<a$, or else we can find
+      some $(b + h)^2 < a, h > 0$, and show that this $b$ is not the $\sup$.
+
+      \item \TODO: I'm stuck
+    }
+}
+
+\bx{
+  \ea{
+    \item We know from exercises before that since $m/2 \not\in \mathbb{Z}$
+    since $m$ is odd, we know $\exists n \in \mathbb{Z}$ such that $n < m/2 < n+1$.
+    Now consider,
+    \begin{equation*}
+      2n < m < 2n+2
+    \end{equation*}
+
+    Since $m \in \mathbb{Z}$, we conclude $m = 2n+1$.
+
+    \item $p \cdot q = (2m+1) \cdot (2n+1) = 4mn + 2m + 2n + 1 = 2(2mn + m + n) + 1$, which is in the form $2N+1$, so therefore $p \cdot q$ is odd.
+    For $p^n$ to be odd, we show by induction.
+
+    \item Honestly I think this is by definition of $\mathbb{Q}$. The hint in the textbook implies the proof should be something about finding the denominator in reduced form.
+    \item I really hope you can show $\sqrt{2}$ is irrational by the time you take topology...
+  }
+}
