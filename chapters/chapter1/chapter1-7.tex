@@ -1,0 +1,219 @@
+\section{Countable and Uncountable Sets}
+
+\begin{definition}
+  A set $A$ is said to be \textbf{infinite} if it is not finite. It is said to
+  be \textbf{countably infinite} if there is a bijective correspondence
+  \begin{equation}
+    f:A \to \Zp
+  \end{equation}
+\end{definition}
+
+\begin{definition}
+  A set is said to be \textbf{countable} if it is either finite or countably
+  infinite. A set that is not countable is said to be \textbf{uncountable}.
+\end{definition}
+
+\begin{theorem}
+  Let $B$ be a nonempty set, then the following are equivalent:
+  \begin{enumerate}[label=(\arabic*)]
+    \item $B$ is countable
+    \item There is a surjective function $f : \Zp \to B$
+    \item There is an injective function $g : B \to \Zp$
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+  A countable union of countable sets is countable.
+\end{theorem}
+
+\begin{theorem}
+  A finite product of countable sets is countable.
+\end{theorem}
+
+\section*{Exercises}
+
+\bx{
+  Lazy way to prove this, but you can make an injective function
+  $f : \mathbb{Q} \to \Zp \times \Zp \times \Zp$
+  where given any
+  \begin{equation*}
+    f(\pm \frac{m}{n}) = (m, n, \pbrac{1 \text{ if negative}, 2 \text{ if positive}})
+  \end{equation*}
+
+  And then we know that $\Zp \times \Zp \times \Zp$
+  is a finite product of countable sets, so it is also countable. Since $f$ is
+  an injective function into a countably infinite set, we conclude that
+  $\mathbb{Q}$ is also countably infinite.
+}
+
+\bx{
+  Checking for bijections. I'm not going to explicitly show this, but you can find inverse functions to show bijectivity.
+  \TODO.
+}
+
+\bx{
+  The bijection is whether or not some $n \in \Zp$ is included in a set
+  or not, which corresponds to 0 (not included) and 1 (included) in the tuple of
+  $X^\omega$.
+}
+
+\bx{
+  \ea{
+    \item For a given $n$, the number of algebraic numbers is $\prod_{i=0}^{n-1}
+    \mathbb{Q}$. Then taking the union over $\Zp$, this would be a
+    countable union of countable sets, which is also countable. Therefore there
+    are a countable number of algebraic numbers.
+    \item AFSOC transcendental numbers are countable. Then the real numbers are
+    a union of two countable sets, which could make $\mathbb{R}$ countable,
+    which is a contradiction.
+  }
+}
+
+\bx{
+  \ea{
+    \item This set of functions can be bijected to $\Zp \times \Zp$, which is countable.
+    \item This would be $\prod_{i=1}^n \Zp$, which is a finite product of countable sets, which is countable.
+    \item This is a countable union of countable sets, which is countable.
+    \item Not countable, you can use diagonalization to construct a function that is not included in a countable map.
+    \item Not countable, can also use a diagonalization argument to construct a function that differs in the $i^\text{th}$ spot for $f_i$.
+    \item Countable, since this is essentially a subset of the countable union of $\Zp$. \label{chap1:sec7:prob5:partf}
+    \item Countable, same reasoning as \ref{chap1:sec7:prob5:partf}
+    \item This is a countable union of a countable union of countable sets, which is still countable.
+    \item Countable, this is a subset of $\Zp \times \Zp$.
+    \item Countable, this is just $\cup_{i=0}^\infty \prod_{j=1}^i \Zp$, which is a countable union of a finite product of countable sets.
+  }
+}
+
+\bx{
+  \ea{
+    \item Originally I was going to define the identity map $I : B \to A$, since
+    $B \subset A$, and say that injections both ways implies bijection, but
+    that's the theorem we are trying to prove in the next step, so let's just do
+    what the problem tells us here.
+
+    To understand the hint a bit more, the reason we can plug in $B$ values for
+    $f$ is because $B \subset A$. And the reason that we get an $A_i$ value from
+    the result of $f$ is also because $B \subset A$.
+
+    Now, if we define this new function $h$,
+    \begin{equation}
+      h(x) = \begin{cases}
+        f(x) &\text{if $x \in A_n - B_n$}\\
+        x &\text{otherwise}
+      \end{cases}
+    \end{equation}
+
+    We have to check this function is bijective.
+    \begin{itemize}
+      \item \textbf{Injective}: We have 2 cases for $x$. Either it is in $B$, in which case we just spit out $x$, or it is in $A_n$ but not in $B_n$, in which case we apply $f(x)$, and make $x \in B$.
+      This is injective, because cases, for some $x_1, x_2 \in A$,
+      \begin{enumerate}
+        \item $x_1, x_2 \in A_n - B_n$, then we are just looking at $f$, which we know is injective
+        \item $x_1 \in A_n - B_n, x_2 \not\in A_n - B_n$, then $x_1 \neq x_2$,
+        and since $x_1 \in A_n - B_n$, it is never mapped to itself, because it
+        if were, then it would imply it is $\not\in A_n - B_n$, which is a
+        contradiction.
+        \item $x_1, x_2 \not\in A_n - B_n$, then we are using the identity map, which is injective
+      \end{enumerate}
+
+      \item \textbf{Surjective}: This is the more difficult part of the proof, but also the more fun.
+
+      The idea of the recursive definition is that we want to partition $B$ into parts, $A_i, B_i$.
+      The only part that we have trouble with is $A_1 - B_1$, since this part is
+      not in $B$. However, by applying $f$ to this portion, we can have it map
+      into $B$, which helps us map $B$. However, since $f(A_1)$ ``takes the
+      spot'' of $A_2$, we then apply $f$ on $A_2$, so that $f(A_2) \subset B$.
+      $f(A_2)$ takes the spot of $A_3$, so we keep applying this recursive
+      definition. Eventually, we can see that all of $B$ is mapped, so $h$ is
+      also surjective on $B$.
+      I know this is an informal proof, but Figure
+      \ref{chap1:sec7:prob6:parta:fig} explains the hardest part of the proof.
+
+      \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+          \node[rectangle, draw, fill=gray!40] (r_1) at (0, 0) {$A_1$};
+          \node[rectangle, draw, anchor=north west] (r_2) at (r_1.north east) {$B_1$};
+          \node[rectangle, draw, anchor=north west, fill=gray!40] (r_3) at (r_2.north east) {$A_2$};
+          \node[rectangle, draw, anchor=north west] (r_4) at (r_3.north east) {$B_2$};
+          \node[rectangle, draw, anchor=north west, fill=gray!40] (r_5) at (r_4.north east) {$A_3$};
+          \node[rectangle, draw, anchor=north west] (r_6) at (r_5.north east) {$B_3$};
+          \node[rectangle, draw, anchor=north west, fill=gray!40] (r_7) at (r_6.north east) {$A_4$};
+          \node[rectangle, draw, anchor=north west] (r_8) at (r_7.north east) {$B_4$};
+
+          \draw[-stealth] (r_1.north) to[bend left=60] node[above] {$f$} (r_3.north);
+          \draw[-stealth] (r_3.north) to[bend left=60] node[above] {$f$} (r_5.north);
+          \draw[-stealth] (r_5.north) to[bend left=60] node[above] {$f$} (r_7.north);
+
+          \draw[-stealth] (r_2.south) -- ++(0, -0.5);
+          \draw[-stealth] (r_3.south) -- ++(0, -0.5);
+          \draw[-stealth] (r_4.south) -- ++(0, -0.5);
+          \draw[-stealth] (r_5.south) -- ++(0, -0.5);
+          \draw[-stealth] (r_6.south) -- ++(0, -0.5);
+          \draw[-stealth] (r_7.south) -- ++(0, -0.5);
+          \draw[-stealth] (r_8.south) -- ++(0, -0.5);
+
+          \draw ($(r_2.south west) + (0, -0.5)$) rectangle
+            ($(r_8.south east) + (0, -1)$) node[pos=.5] {$B$};
+        \end{tikzpicture}
+        \caption{Showing the subset partitions for $A_i, B_i$}
+        \label{chap1:sec7:prob6:parta:fig}
+      \end{figure}
+    \end{itemize}
+
+    \textbf{Note:} To be honest, I'm not sure why we had to go through the
+    trouble of defining the recursive definition. To me, it seems like with $f$,
+    the scenario is that $A$ maps to $B$ injectively, except there are some some
+    elements in $B$ that are not mapped.
+
+    \textbf{Update:} It seems like the reason is that with a naive definition of
+    just $h(x)$ mapping $f(x)$ for $x \in A-B$ and identity for $x \in A \cap
+    B$, we cannot claim that this combo of $f(x), x$ maps $B$ surjectively. See
+    the surjective part of the proof to see why this proof is so fun.
+
+    \label{chap1:sec7:prob6:parta}
+
+    \item We have two cases, either $A \subset C$ or $C \subset A$. In either
+    case, we can apply part \ref{chap1:sec7:prob6:parta}.
+  }
+}
+
+\bx{
+  We can see that $E \subset D$. Need $f: D \to E$. We can construct such an $f$
+  by representing each $x \in \Zp$ in binary, and mapping it to the
+  corresponding 0-1 tuple in $\pbrac{0, 1}$.
+}
+
+\bx{
+  \TODO. I'm stuck. I assume we want to do the double bijective proof to show equal cardinalities.
+}
+
+\bx{
+  \ea{
+    \item First rearrange, the formula to be easier to apply:
+    \begin{equation*}
+      h(n+1) = \sqrt{
+        h(n) + h(n-1)^2
+      }
+    \end{equation*}
+    Trying out some values,
+    \begin{align*}
+      h(3) &= \sqrt{2 + 1} = \sqrt{3}\\
+      h(4) &= \sqrt{4 + \sqrt{3}}\\
+      h(5) &= \sqrt{3 + \sqrt{4 + \sqrt{3}}}
+    \end{align*}
+    so we know that there exists such a function
+
+    \item Notice that when we took the square root, we could have had $\pm$, so there it is not well defined which one we should take.
+    \item If we try to solve for
+    \begin{align*}
+      h(3) &= \sqrt{
+        2 - 1
+      } = \pm 1\\
+      h(4) &= \sqrt{
+        \pm 1 - 2
+      } \implies \text{square root of negative number...}
+    \end{align*}
+    imaginary numbers? Never heard of them.
+  }
+}

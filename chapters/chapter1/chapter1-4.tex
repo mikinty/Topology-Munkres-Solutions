@@ -67,22 +67,22 @@
     collection of inductive sets is also inductive.
 
     \item Proving the basic properties \begin{enumerate}[label=(\arabic*)]
-      \item $1 > 0$ and $1 \in \mathbb{Z}$, so $1 \in \mathbb{Z}_+$. Now for any
-      $x \in \mathbb{Z}_+$, the number $x+1$ is still an integer, and since $x >
-      0$, we know $x + 1 > 0$, which means $x + 1 \in \mathbb{Z}_+$ as well.
-      Therefore, we conclude $\mathbb{Z}_+$ is inductive.
+      \item $1 > 0$ and $1 \in \mathbb{Z}$, so $1 \in \Zp$. Now for any
+      $x \in \Zp$, the number $x+1$ is still an integer, and since $x >
+      0$, we know $x + 1 > 0$, which means $x + 1 \in \Zp$ as well.
+      Therefore, we conclude $\Zp$ is inductive.
 
-      \item \AFSOC $A \neq \mathbb{Z}_+$. Then we know that $\exists x \in
-      \mathbb{Z}_+, x \not\in A$. However, if we use induction from 1, we can
+      \item \AFSOC $A \neq \Zp$. Then we know that $\exists x \in
+      \Zp, x \not\in A$. However, if we use induction from 1, we can
       show that $x \in A$, which is a contradiction. Therefore we conclude $A =
-      \mathbb{Z}_+$.
+      \Zp$.
     \end{enumerate}
   }
 }
 
 \bx{
   \ea{
-    \item We have $a \in \mathbb{Z}_+$. We just want to inductively show that $a + x \in \mathbb{Z}_+, \forall x \in \mathbb{Z}_+$.
+    \item We have $a \in \Zp$. We just want to inductively show that $a + x \in \Zp, \forall x \in \Zp$.
     We can do this by induction.
     \label{chap1:sec4:prob5:parta}
     \item Induction on $b$ \label{chap1:sec4:prob5:partb}
