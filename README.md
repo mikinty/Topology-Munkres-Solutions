@@ -1,7 +1,7 @@
 # Topology; A First Course Solutions (Munkres)
 
 Once again, writing unofficial solutions for a math textbook. This time
-[Munkres's 2000 Topology, 2nd edition](https://amzn.to/3xoBdLV).
+[Munkres's 2000 Topology, 2nd edition](https://amzn.to/39IyWTL).
 
 The PDF is located in the [`build/`](./build/main.pdf) folder of the repo.
 
