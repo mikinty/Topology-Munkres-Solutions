@@ -24,3 +24,10 @@ There are also `TODO` comments if there are more minor parts that need work, e.g
 - Chapter 6: :x:
 - Chapter 7: :x:
 - Chapter 8: :x:
+
+
+## Other Math Solutions by Me
+
+- [Understanding Analysis by Abbott](https://github.com/mikinty/Understanding-Analysis-Abbott-Solutions)
+- [Principles of Analysis by Rudin](https://github.com/mikinty/Baby-Rudin-Solutions)
+- [Linear Algebra Done Right by Axler](https://github.com/mikinty/Axler-Linear-Algebra-Solutions)
